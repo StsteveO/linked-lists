@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked Lists</title>
+</head>
+<body>
+    <script>
+        //create 1 class for head creation
+        class LinkedList{
+            constructor(head= null){
+                this.head= head
+            }
+            append(value){}
+            prepend(value){}
+            size(){}
+            head(){}
+            tail(){}
+            at(index){}
+            pop(){}
+            contains(value){}
+            find(value){}
+            toString(){}
+            insertAt(value, index){}
+            removeAt(index){}
+        } 
+        //create 1 class for node creation
+        class Node{
+            constructor (value= null){
+                this.value= value
+                this.next= null
+            }
+        }
+
+        //node creation example
+        let node1= new Node("First node");
+        let node2= new Node("Second node");
+        //next creation example
+        node1.next= node2;
+        //list creation example
+        let mainList= new LinkedList(node1);
+
+        // console.log(mainList);
+    </script>
+</body>
+</html>
