@@ -15,16 +15,62 @@
             }
             append(value){}
             prepend(value){}
-            size(){}
-            head(){}
-            tail(){}
-            at(index){}
+
+            size(){
+                let count=0; //start off at zero
+                let node=this.head; //count the head as one
+                while(node){ //if there is a node
+                    count++; //increae count
+                    node= node.next; //then move on to the next one
+                }
+                return count; //if there is no node, STOP and return the current count
+            }
+
+            firstNode(){
+                return this.head;
+            }
+
+            tail(){
+                let tail= this.head;
+                if(tail){
+                    while(tail.next){
+                        tail= tail.next;
+                    }
+                }
+                return tail;
+            }
+
+            at(index){
+                let count=0;
+                let node= this.head;
+
+                if(index===0){
+                    return this.head;
+                }else if(index<0){
+                    return "Please use numbers, zero, and above.";
+                }else if(index===undefined){
+                    return "Please enter a number."
+                }
+
+                while(node && count<index){
+                    count++;
+                    node= node.next;
+                }
+                if(count===index){
+                    return node;
+                };
+            }
+
             pop(){}
             contains(value){}
             find(value){}
             toString(){}
             insertAt(value, index){}
             removeAt(index){}
+
+            clear(){
+                this.head= null;
+            }
         } 
         //create 1 class for node creation
         class Node{
@@ -42,7 +88,13 @@
         //list creation example
         let mainList= new LinkedList(node1);
 
-        // console.log(mainList);
+        console.log(mainList.at(0));
+        //mainList.at(1) = returns the node at index 1
+        //mainList.firstNode() = returns the first node
+        //mainList.tail() = returns last node
+        //mainList.clear() = clears out list
+        //console.log(mainList.size()); = total list size
+        
     </script>
 </body>
 </html>
