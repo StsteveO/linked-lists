@@ -126,7 +126,7 @@
                 return null;
             }
 
-            toString(){
+            toStringList(){
                 let curr= this.head;
                 let string= "";
                 while(curr){
@@ -134,6 +134,16 @@
                     curr= curr.next;
                 }
                 return string;
+            }
+
+            toString(){
+                let curr= this.head;
+                let string= "";
+                while(curr){
+                    string+= `( ${curr.aValue} ) ->`;
+                    curr= curr.next;
+                }
+                return string+" null";
             }
 
             insertAt(value, index){
@@ -211,8 +221,9 @@
         console.log(mainList.prepend("Prepended Node"));
         console.log(mainList.find("Third node"));
         
-        console.log(mainList.toString());
+        console.log(mainList.toStringList());
         console.log(mainList.size());
+        // console.log(mainList.toString());
     </script>
 </body>
 </html>
