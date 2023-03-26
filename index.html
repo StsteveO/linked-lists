@@ -100,9 +100,31 @@
                 }
             }
 
-            contains(value){}
+            contains(value){
+                let curr= this.head;
+                while(curr!== null){
+                    if(curr.aValue===value){
+                        return true;
+                    }else{
+                        curr= curr.next;
+                    }
+                }
+                return false;
+            }
 
-            find(value){}
+            find(value){
+                let counter= 0;
+                let curr= this.head;
+                while(curr!==null){
+                    if(curr.aValue===value){
+                        return counter;
+                    }else{
+                        counter++;
+                        curr=curr.next;
+                    }
+                }
+                return null;
+            }
 
             toString(){
                 let curr= this.head;
@@ -183,20 +205,14 @@
         //list creation example
         let mainList= new LinkedList(node1);
 
+        //examples
         console.log(mainList.insertAt("Inserted Node", 1));
         console.log(mainList.append("Appended Node"));
         console.log(mainList.prepend("Prepended Node"));
+        console.log(mainList.find("Third node"));
         
         console.log(mainList.toString());
         console.log(mainList.size());
-        // console.log(mainList.at(0));
-
-        //mainList.at(1) = returns the node at index 1
-        //mainList.firstNode() = returns the first node
-        //mainList.tail() = returns last node
-        //mainList.clear() = clears out list
-        //mainList.size() = total list size
-        
     </script>
 </body>
 </html>
